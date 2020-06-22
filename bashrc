@@ -42,9 +42,10 @@ alias cleanphoto="exiftool -all= $*"
 #####################
 
 alias d="cd ~/Downloads"
-alias gh="cd ~/GitHub"
+alias gh="cd ~/gh"
 alias h="cd ~"
-alias t="cd ~/Desktop/temp"
+alias t="cd ~/temp"
+alias dev="cd ~/dev"
 
 #####################
 #                   #
@@ -144,7 +145,8 @@ if [ $var = "/data/data/com.termux/files/usr/bin/bash" ]
 		alias tree='tree -C'
 		alias ls='ls -sh1 --color=auto'
 	else
-		alias ls='ls -sh1 --color=auto'
+		alias ll='ls -sh1 --color=auto'
+		alias l='ls -l --color=auto'
 		alias grep='grep --color=auto'
 		alias diff='diff --color=auto'
 		alias dmesg='dmesg --color=auto'
@@ -163,15 +165,3 @@ if [ $var = "/data/data/com.termux/files/usr/bin/bash" ]
 		alias mocp='mocp -T blackwhite'
 fi
 
-### MISC ###
-
-shopt -s autocd
-
-if [ -e ~/scripts/bash_private.sh ]; then
-	. ~/scripts/bash_private.sh
-fi
-
-# added by travis gem
-[ -f /home/konrad/.travis/travis.sh ] && source /home/konrad/.travis/travis.sh
-
-eval $(thefuck --alias)
