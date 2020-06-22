@@ -53,18 +53,6 @@ alias dev="cd ~/dev"
 #                   #    
 #####################
 
-sprunge() {
-	if [[ $1 ]]; then
-	curl -F 'sprunge=<-' "http://sprunge.us" <"$1"
-	else
-	curl -F 'sprunge=<-' "http://sprunge.us"
-	fi
-}
-
-linx(){
-	curl -T "$@" -H "Linx-Randomize: yes" https://linx.li/upload/  
-}
-
 mdd(){
 	mkdir $1 && cd $1
 }
@@ -138,7 +126,8 @@ if [ $var = "/data/data/com.termux/files/usr/bin/bash" ]
 		date
 
 		alias t="tmux"
-		alias l="ls"
+		alias l="ls -l"
+		alias la="ls -la"
 		alias c="cat"
 		alias r="ranger"
 		alias py="python"
@@ -147,6 +136,7 @@ if [ $var = "/data/data/com.termux/files/usr/bin/bash" ]
 	else
 		alias ll='ls -sh1 --color=auto'
 		alias l='ls -l --color=auto'
+		alias la='ls -la --color=auto'
 		alias grep='grep --color=auto'
 		alias diff='diff --color=auto'
 		alias dmesg='dmesg --color=auto'
