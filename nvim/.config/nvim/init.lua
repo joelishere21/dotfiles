@@ -208,6 +208,8 @@ require("lazy").setup({
 		  -- Keymaps
 		  -------------------------------------------------------
 		  vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+		  vim.keymap.set("n", "gr", vim.lsp.buf.references)
+		  vim.keymap.set("n", "gI", vim.lsp.buf.implementation)
 		  vim.keymap.set("n", "K", vim.lsp.buf.hover)
 		  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 		  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
@@ -271,6 +273,8 @@ require("lazy").setup({
 -- Keymaps 
 -----------------------------------------------------------
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<leader>q", ":ccl<CR>", { desc = "Close the QuickFix list" })
+
 vim.keymap.set("n", "Y", "y$", { desc = "Yank to end of line" })
 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
